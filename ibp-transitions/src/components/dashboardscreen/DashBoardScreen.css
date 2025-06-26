@@ -1,0 +1,46 @@
+/* Outer container already used inside dashboard-screen */
+.dashboard-inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    background-color: #fff;
+  }
+  
+  /* Titles */
+  .dashboard-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .dashboard-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Scrollable content box */
+  .dashboard-scroll-box {
+    flex: 1;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Optional: visible scrollbar styling */
+  .dashboard-scroll-box::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .dashboard-scroll-box::-webkit-scrollbar-thumb {
+    background-color: #b0b0b0;
+    border-radius: 4px;
+  }
+  
+  .dashboard-scroll-box::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  

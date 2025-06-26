@@ -1,0 +1,85 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: black; */
+  padding: 10px;
+  overflow: hidden;
+}
+
+/* App container */
+.app-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(180, 31, 31);
+  padding: 10px;
+  background: linear-gradient(to bottom right, #e8dacb, #d6b88d);
+}
+
+/* Common screen styling */
+.screen {
+  position: absolute;
+  height: 100vh;
+  width: 80%;
+  transition: opacity 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main screen styling */
+.main-screen {
+  background: linear-gradient(to top left, #996842, #c7bbb4);
+  /* z-index: 2; */
+  opacity: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh !important;
+  width: 100%;
+  color: #000000 !important;
+}
+
+/* Dashboard screen styling */
+.dashboard-screen {
+  background: linear-gradient(to bottom right, #f9f9f9, #e6e6e6);
+  z-index: 1;
+  transform: translateY(100%);
+  width: 80%;
+  height: 89vh;
+  left: 10%;
+  top: 10%;
+  position: absolute;
+  overflow: auto;
+ 
+}
+
+/* Content layout inside both screens */
+.screen-content {
+  height: 100%;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
+}
+
+.screen-content h1,
+.screen-content h2 {
+  font-size: 3rem;
+  margin: 0;
+  color: #333;
+}
+
+.screen-content p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 1rem;
+}
