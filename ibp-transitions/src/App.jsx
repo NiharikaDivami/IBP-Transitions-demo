@@ -4,6 +4,7 @@
 // import gsap from 'gsap';
 // import './styles.css';
 
+<<<<<<< Updated upstream
 // function App() {
 //   const mainRef = useRef(null);
 //   const dashboardRef = useRef(null);
@@ -52,6 +53,10 @@ import MainScreen from './components/mainscreen/MainScreen';
 import DashboardScreen from './components/dashboardscreen/DashBoardScreen';
 import gsap from 'gsap';
 import './styles.css';
+=======
+import './App.css'
+import ContainerComponent from './components/container/containerComponent'
+>>>>>>> Stashed changes
 
 function App() {
   const mainRef = useRef(null);
@@ -84,6 +89,7 @@ function App() {
   };
 
   return (
+<<<<<<< Updated upstream
     <div className="app-container">
       <div className="screen main-screen" ref={mainRef}>
         <MainScreen />
@@ -93,6 +99,12 @@ function App() {
       </div>
     </div>
   );
+=======
+    <>
+    <ContainerComponent />
+    </>
+  )
+>>>>>>> Stashed changes
 }
 
 export default App;
