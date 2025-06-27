@@ -1,52 +1,3 @@
-// import React, { useEffect, useRef, useState } from 'react';
-// import MainScreen from './components/MainScreen';
-// import DashboardScreen from './components/DashBoardScreen';
-// import gsap from 'gsap';
-// import './styles.css';
-
-// function App() {
-//   const mainRef = useRef(null);
-//   const dashboardRef = useRef(null);
-//   const [hasAnimated, setHasAnimated] = useState(false);
-
-//   useEffect(() => {
-//     const handleWheel = (e) => {
-//       if (e.deltaY > 0 && !hasAnimated) {
-//         setHasAnimated(true);
-//         animateTransition();
-//       }
-//     };
-
-//     window.addEventListener('wheel', handleWheel);
-//     return () => window.removeEventListener('wheel', handleWheel);
-//   }, [hasAnimated]);
-
-//   const animateTransition = () => {
-//     const tl = gsap.timeline();
-//     tl.to(mainRef.current, {
-//       opacity: 0,
-//       duration: 0.8,
-//       ease: 'power2.out',
-//     }).to(dashboardRef.current, {
-//       y: 0,
-//       duration: 1,
-//       ease: 'power3.out',
-//     }, 0); // start at same time
-//   };
-
-//   return (
-//     <div className="container">
-//       <div className="screen main" ref={mainRef}>
-//         <MainScreen />
-//       </div>
-//       <div className="screen dashboard" ref={dashboardRef}>
-//         <DashboardScreen />
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default App;
 import React, { useEffect, useRef, useState } from 'react';
 import MainScreen from './components/mainscreen/MainScreen';
 import DashboardScreen from './components/dashboardscreen/DashBoardScreen';
@@ -65,16 +16,25 @@ function App() {
   useEffect(() => {
     const handleWheel = (e) => {
       if (e.deltaY > 0 && !hasAnimated) {
+        // scroll down from MainScreen to Dashboard
         setHasAnimated(true);
-        animateTransition();
+        animateToDashboard();
+      } else if (e.deltaY < 0 && hasAnimated) {
+        // Scroll up in dashboard
+        const dashboard = dashboardRef.current;
+        if (dashboard.scrollTop === 0) {
+          // scroll down while dashboard is at top -> animate back
+          setHasAnimated(false);
+          animateToMain();
+        }
       }
     };
 
-    window.addEventListener('wheel', handleWheel);
+    window.addEventListener('wheel', handleWheel, { passive: true });
     return () => window.removeEventListener('wheel', handleWheel);
   }, [hasAnimated]);
 
-  const animateTransition = () => {
+  const animateToDashboard = () => {
     const tl = gsap.timeline();
     tl.to(mainRef.current, {
       opacity: 0,
@@ -82,9 +42,22 @@ function App() {
       ease: 'power2.out',
     }).to(dashboardRef.current, {
       y: 0,
-      duration: 3,
+      duration: 1.5,
       ease: 'power3.out',
     }, 0);
+  };
+
+  const animateToMain = () => {
+    const tl = gsap.timeline();
+    tl.to(dashboardRef.current, {
+      y: '100%',
+      duration: 1.5,
+      ease: 'power3.inOut',
+    }).to(mainRef.current, {
+      opacity: 1,
+      duration: 0.8,
+      ease: 'power2.in',
+    }, 0.5);
   };
 
   return (

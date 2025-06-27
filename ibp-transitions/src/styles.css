@@ -59,6 +59,10 @@ body, html {
   top: 10%;
   position: absolute;
   overflow: auto;
+  overflow-y: auto;
+  will-change: transform;
+  scrollbar-width: none;           /* Firefox */
+  -ms-overflow-style: none;        /* IE 10+ */
  
 }
 
