@@ -4,7 +4,6 @@
 // import gsap from 'gsap';
 // import './styles.css';
 
-<<<<<<< Updated upstream
 // function App() {
 //   const mainRef = useRef(null);
 //   const dashboardRef = useRef(null);
@@ -53,10 +52,9 @@ import MainScreen from './components/mainscreen/MainScreen';
 import DashboardScreen from './components/dashboardscreen/DashBoardScreen';
 import gsap from 'gsap';
 import './styles.css';
-=======
 import './App.css'
 import ContainerComponent from './components/container/containerComponent'
->>>>>>> Stashed changes
+import FormSelector from './components/form-components/form-component';
 
 function App() {
   const mainRef = useRef(null);
@@ -89,22 +87,20 @@ function App() {
   };
 
   return (
-<<<<<<< Updated upstream
-    <div className="app-container">
-      <div className="screen main-screen" ref={mainRef}>
-        <MainScreen />
-      </div>
-      <div className="screen dashboard-screen" ref={dashboardRef}>
-        <DashboardScreen />
-      </div>
-    </div>
-  );
-=======
+  //   <div className="app-container">
+  //     <div className="screen main-screen" ref={mainRef}>
+  //       <MainScreen />
+  //     </div>
+  //     <div className="screen dashboard-screen" ref={dashboardRef}>
+  //       <DashboardScreen />
+  //     </div>
+  //   </div>
+  // );
     <>
-    <ContainerComponent />
+    {/* <ContainerComponent /> */}
+    <FormSelector />
     </>
   )
->>>>>>> Stashed changes
 }
 
 export default App;
