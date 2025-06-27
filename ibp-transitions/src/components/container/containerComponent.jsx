@@ -4,7 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
   import { gsap } from 'gsap';
 
   function ContainerComponent() {
-    const [activeIndex, setActiveIndex] = useState(0); // 0: first card expanded by default
+    const [activeIndex, setActiveIndex] = useState(0); 
     const cardsRef = useRef([]);
     const leftPartsRef = useRef([]);
 
@@ -20,7 +20,6 @@ import React, { useEffect, useRef, useState } from 'react';
       });
     }, [activeIndex]);
 
-    // On mouse leave from the whole card area, reset to first card expanded
     const handleMouseLeave = () => {
       setActiveIndex(0);
     };

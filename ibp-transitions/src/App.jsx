@@ -51,6 +51,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import MainScreen from './components/mainscreen/MainScreen';
 import DashboardScreen from './components/dashboardscreen/DashBoardScreen';
 import gsap from 'gsap';
+import ScrollElements from './components/scrollElements/scrollElements';
 import './styles.css';
 import './App.css'
 import ContainerComponent from './components/container/containerComponent'
@@ -98,7 +99,8 @@ function App() {
   // );
     <>
     {/* <ContainerComponent /> */}
-    <FormSelector />
+    {/* <FormSelector /> */}
+    <ScrollElements />
     </>
   )
 }
