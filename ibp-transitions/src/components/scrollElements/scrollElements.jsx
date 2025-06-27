@@ -6,21 +6,14 @@ function ScrollElements() {
   const containerRef = useRef(null);
 
   useEffect(() => {
-    // Wait until the component is mounted
-    if (!containerRef.current) return;
-
-    const elements = gsap.utils.toArray(containerRef.current.children);
-    
-    // Safeguard against empty elements
-    if (elements.length === 0) return;
-
-    gsap.from(elements, {
-      y: 100,
-      opacity: 0,
+    const elements = containerRef.current.querySelectorAll('.scroll-name');
+    gsap.set(elements, { opacity: 0 , y: +100 });
+    gsap.to(elements, {
+      y: 10,
+      opacity: 1,
       duration: 1,
-      stagger: 0.3,
-      ease: "power3.out",
-      delay: 0.2
+      stagger: 0.5,
+      ease: 'power2.out',
     });
 
     // Cleanup function
@@ -30,7 +23,7 @@ function ScrollElements() {
   }, []);
 
   return (
-    <div ref={containerRef} className="scroll-container">
+    <div id="scroll-elements-container" ref={containerRef}>
       <h1 className="scroll-name">Kasi</h1>
       <h1 className="scroll-name">Damu</h1>
       <h1 className="scroll-name">Harshith</h1>
