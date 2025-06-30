@@ -24,8 +24,7 @@ function FormSelector() {
       setShowFields(null);
     } else {
       setExpanded(idx);
-      setShowFields(null);
-      setTimeout(() => setShowFields(idx), 1100); // match animation duration
+      setShowFields(idx); // Show fields immediately, no delay
     }
   };
 

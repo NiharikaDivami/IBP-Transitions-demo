@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
-import './scrollElements.css';
+// import './scrollElements.css';
 
 function ScrollElements() {
   const containerRef = useRef(null);
