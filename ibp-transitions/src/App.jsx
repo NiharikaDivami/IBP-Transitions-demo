@@ -7,6 +7,8 @@ import './styles.css';
 import './App.css'
 import ContainerComponent from './components/container/containerComponent'
 import FormSelector from './components/form-components/form-component';
+import ProgressBar from './components/ProgressBar/progressBar';
+import CardsTransition from './components/cardsTransition';
 
 function App() {
   const mainRef = useRef(null);
@@ -22,6 +24,7 @@ function App() {
       } else if (e.deltaY < 0 && hasAnimated) {
         // Scroll up in dashboard
         const dashboard = dashboardRef.current;
+        if (!dashboard || typeof dashboard.scrollTop !== 'number') return;
         if (dashboard.scrollTop === 0) {
           // scroll down while dashboard is at top -> animate back
           setHasAnimated(false);
@@ -72,8 +75,10 @@ function App() {
   // );
     <>
     {/* <ContainerComponent /> */}
-    <FormSelector />
+    {/* <FormSelector /> */}
     {/* <ScrollElements /> */}
+    {/* <ProgressBar /> */}
+    <CardsTransition />
     </>
   )
 }
